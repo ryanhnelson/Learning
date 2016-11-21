@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "library(Quandl)\nlibrary(quantmod)\nlibrary(xts)\nlibrary(zoo)\n\nunemployment <- Quandl(\"FRED/SEAT653URN\", api_key=\"MGe_MUEiBmwwMo7eSsVB\", \n       start_date=\"2006-01-01\", end_date=\"2015-12-31\")\n\nwrite.table(unemployment, \"~/Github/Learning/data/unemployment.csv\", sep = \",\")\n\nunemploymentx <- xts(unemployment$VALUE, order.by = unemployment$DATE)\nunemployment_year <- apply.yearly(unemploymentx, mean)\n\nbarChart(unemployment_year)\n",
+    "created" : 1479748524319.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "674371098",
+    "id" : "296DB6CA",
+    "lastKnownWriteTime" : 1479752012,
+    "last_content_update" : 1479752012380,
+    "path" : "~/GitHub/Learning/wa-unemployment.R",
+    "project_path" : "wa-unemployment.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
